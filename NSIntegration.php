@@ -1,7 +1,4 @@
 <?php
-	$my_file = 'file.txt';
-	$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-	$data = json_encode($_POST);
-	fwrite($handle, $data);
-	fclose($handle);
+	$json = file_get_contents('php://input'); $obj = json_decode($json);
+	file_put_contents('webhook.log',"$json\n",FILE_APPEND);
 ?>
