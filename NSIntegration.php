@@ -1,9 +1,6 @@
 <?php
-	header('Content-Type: text/html');
-
-	$arg_list = func_get_args();
-echo "Arg List" . $arg_list;
-    for ($i = 0; $i < $numargs; $i++) {
-        echo "Argument $i is: " . $arg_list[$i] . "\n";
-    }
+	$my_file = 'file.txt';
+	$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
+	$data = json_encode($_POST);
+	fwrite($handle, $data);
 ?>
