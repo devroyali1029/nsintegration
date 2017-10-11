@@ -3,4 +3,5 @@
 	$handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
 	$data = json_encode($_POST);
 	fwrite($handle, $data);
+	fclose($handle);
 ?>
